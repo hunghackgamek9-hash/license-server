@@ -12,6 +12,10 @@ def save_keys(data):
     with open("keys.json", "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4)
 
+@app.route("/")
+def home():
+    return "License Server is running!"
+
 @app.route("/check", methods=["POST"])
 def check():
 
@@ -60,4 +64,4 @@ def check():
     })
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=5000
